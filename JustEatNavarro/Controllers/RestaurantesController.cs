@@ -22,13 +22,14 @@ namespace JustEatNavarro.Controllers
         }
 
         // GET: Restaurantes/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
-            if (id == null)
+            int idRestaurante;
+            if (string.IsNullOrEmpty(id) || !int.TryParse(id, out idRestaurante))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Restaurante restaurante = db.Restaurante.Find(id);
+            Restaurante restaurante = db.Restaurante.Find(idRestaurante);
             if (restaurante == null)
             {
                 return HttpNotFound();

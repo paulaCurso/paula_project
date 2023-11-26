@@ -98,3 +98,5 @@ C:\Users\paula\Documents\JustEatNavarro\JustEatNavarro.Tests\obj\Debug\JustEatNa
 C:\Users\paula\Documents\JustEatNavarro\JustEatNavarro.Tests\obj\Debug\JustEatNavarro.Tests.csproj.CopyComplete
 C:\Users\paula\Documents\JustEatNavarro\JustEatNavarro.Tests\obj\Debug\JustEatNavarro.Tests.dll
 C:\Users\paula\Documents\JustEatNavarro\JustEatNavarro.Tests\obj\Debug\JustEatNavarro.Tests.pdb
+C:\Users\paula\Documents\JustEatNavarro\JustEatNavarro.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\paula\Documents\JustEatNavarro\JustEatNavarro.Tests\bin\Debug\EntityFramework.SqlServer.xml

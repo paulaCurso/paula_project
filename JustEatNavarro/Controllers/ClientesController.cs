@@ -82,6 +82,14 @@ namespace JustEatNavarro.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Controlar que NombreLogin no pueda ser modificado una vez que se le ha proporcionado valor
+                var clienteBD = db.Cliente.FirstOrDefault(c => c.Id.Equals(cliente.Id) && !string.IsNullOrEmpty(c.NombreLogin) &&
+                                                            !c.NombreLogin.Equals(cliente.NombreLogin));
+                if (clienteBD != null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+                }
+
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
