@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ce778041cad9478d92af43e88946b57f" Name="Diagram1">
+        <EntityTypeShape EntityType="JustEatNavarroModel.Categoria" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="JustEatNavarroModel.Cesta" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JustEatNavarroModel.Cliente" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JustEatNavarroModel.Conductor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JustEatNavarroModel.Pago" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JustEatNavarroModel.Pedido" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JustEatNavarroModel.Producto" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JustEatNavarroModel.Restaurante" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <AssociationConnector Association="JustEatNavarroModel.FK_Restaurante_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="JustEatNavarroModel.FK_Cesta_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="JustEatNavarroModel.FK_Cesta_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="JustEatNavarroModel.FK_Pedido_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="JustEatNavarroModel.FK_Pedido_Conductor" ManuallyRouted="false" />
+        <AssociationConnector Association="JustEatNavarroModel.FK_Pago_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="JustEatNavarroModel.FK_Producto_Restaurante" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
