@@ -1,17 +1,17 @@
 ﻿using JustEatNavarro.Controllers;
 using JustEatNavarro.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using NUnit.Framework;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 
 namespace JustEatNavarro.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class ClientesControllerTest
     {
-        [TestMethod]
+        [Test]
         public void Edit()
         {
             // Arrange
@@ -28,9 +28,9 @@ namespace JustEatNavarro.Tests.Controllers
                 var result = controller.Edit(cliente);
 
                 // Assert
-                Assert.IsInstanceOfType(result, typeof(HttpStatusCodeResult));
+                Assert.That(result, Is.InstanceOf(typeof(HttpStatusCodeResult)));
                 var statusCodeResult = (HttpStatusCodeResult)result;
-                Assert.AreEqual(statusCodeResult.StatusCode, (int)HttpStatusCode.Unauthorized);
+                Assert.That(statusCodeResult.StatusCode, Is.EqualTo((int)HttpStatusCode.Unauthorized));
             }
         }
     }

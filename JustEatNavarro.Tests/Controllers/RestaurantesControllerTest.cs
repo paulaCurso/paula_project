@@ -1,19 +1,16 @@
 ﻿using JustEatNavarro.Controllers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Net.Http;
 using System.Net;
 using System.Web.Mvc;
 using JustEatNavarro.Models;
 using System.Linq;
+using NUnit.Framework;
 
 namespace JustEatNavarro.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class RestaurantesControllerTest
     {
-        [TestMethod]
-        [TestCategory("UnitTest")]
+        [Test]
         public void Details()
         {
             // Arrange
@@ -23,9 +20,9 @@ namespace JustEatNavarro.Tests.Controllers
             var result = controller.Details("lele");
 
             // Assert
-            Assert.IsInstanceOfType(result, typeof(HttpStatusCodeResult));
+            Assert.That(result, Is.InstanceOf(typeof(HttpStatusCodeResult)));
             var statusCodeResult = (HttpStatusCodeResult)result;
-            Assert.AreEqual(statusCodeResult.StatusCode, (int)HttpStatusCode.BadRequest);
+            Assert.That(statusCodeResult.StatusCode, Is.EqualTo((int)HttpStatusCode.BadRequest));
 
             Restaurante restaurante = null;
             using (var db = new JustEatNavarroEntities())
@@ -39,11 +36,11 @@ namespace JustEatNavarro.Tests.Controllers
                 result = controller.Details(restaurante.Id.ToString());
 
                 // Assert
-                Assert.IsInstanceOfType(result, typeof(ViewResult));
+                Assert.That(result, Is.InstanceOf(typeof(ViewResult)));
                 var viewResult = (ViewResult)result;
                 Assert.IsNotNull(viewResult.Model);
-                Assert.IsInstanceOfType(viewResult.Model, typeof(Restaurante));
-                Assert.AreEqual(restaurante.Id, ((Restaurante)viewResult.Model).Id);
+                Assert.That(viewResult.Model, Is.InstanceOf(typeof(Restaurante)));
+                Assert.That(restaurante.Id, Is.EqualTo(((Restaurante)viewResult.Model).Id));
             }
         }
     }
